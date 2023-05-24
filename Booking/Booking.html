@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikaday Calendar Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <link rel="stylesheet" href="Booking.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/6en8XCp+HHAAK5GSLf2xlYtvJ8U2Q4U+9cuEnJoa3" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3720a64a77.js" crossorigin="anonymous"></script>
+
+</head>
+<header>
+  <div class="login">
+    <i class="fa-regular fa-user" style="color: black" ></i>
+    <a href="../Sign up/Sign-up.html">LOG IN</a>
+</div>
+<div class="menu-icon" id="menu-icon">
+    <div class="menu-btn">
+      <div class="menu-btn__burger"></div>
+    </div>
+  </div>
+  <nav class="menu" id="menu" tabindex="0">
+    <div class="menu-item dropdown-container">
+        <i class="fa-solid fa-tooth fa-2x" style="color: black"></i>
+        <a class="top" href="#">Treatment</a>
+        <a class="bottom" href="#">See More</a>
+        <div class="dropdown-hover-zone"></div>
+        <div class="dropdown-menu">
+          <a href="#">Bridges</a>
+          <a href="#">Crowns</a>
+          <a href="#">Fillings</a>
+          <a href="#">Root canal treatment</a>
+          <a href="#">Scale and polish</a>
+          <a href="#">Braces</a>
+          <a href="#">Invisalign</a>
+          <a href="#">Wisdom tooth removal</a>
+          <a href="#">Dental implants</a>
+        </div>
+      </div>
+      
+      
+    
+    <span class="vertical-line"></span>
+    <div class="menu-item">
+        <i class="fa-regular fa-images fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+        <a class="top" href="#" onclick="toggleActive(event)">Gallery</a>
+        <a class="bottom" href="#" onclick="toggleActive(event)">See More</a>
+    </div>
+    <span class="vertical-line"></span>
+    <div class="menu-item">
+        <i class="fa-solid fa-phone fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+        <a class="top" href="#" onclick="toggleActive(event)">Contact</a>
+        <a class="bottom" href="#" onclick="toggleActive(event)">See More</a>
+    </div>
+    <span class="vertical-line"></span>
+    <div class="menu-item">
+        <i class="fa-solid fa-people-group fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+        <a class="top" href="#" onclick="toggleActive(event)">Who We Are</a>
+        <a class="bottom" href="#" onclick="toggleActive(event)">See More ></a>
+    </div>
+    <span class="vertical-line"></span>
+</nav>
+    
+</header>
+<body>
+
+
+
+<div class="info-board">
+    <span class="selected-date-wrapper">
+      <span class="selected-date"></span><span class="ordinal-suffix"></span>
+    </span>
+    <div class="treatment-container">
+      <div class="treatment-dropdown">
+        <div class="treatment-dropdown-selected" onclick="toggleTreatmentDropdown()">
+          <span id="selected-treatment-value">Select a treatment</span>
+          <i class="treatment-arrow"></i>
+        </div>
+        <div class="dropdown-options" id="treatment-dropdown-options">
+          <div class="option" onclick="selectTreatmentOption('Root Canal Therapy')">Root Canal Therapy</div>
+          <div class="option" onclick="selectTreatmentOption('Dental Hygiene')">Dental Hygiene</div>
+          <!-- Add more treatment options here -->
+        </div>
+      </div>
+      <p class="who">W/ <br><span id="doctor">Dr. Amran Husain</span></p>
+    </div>
+  </div>
+  
+      
+      
+      
+      
+    <div class="time-container">
+        <div class="time-dropdown">
+            <div class="dropdown-selected" onclick="toggleDropdown()">
+              <span id="selected-value">Select a time</span>
+              <i class="arrow"></i>
+            </div>
+            <div class="dropdown-options" id="dropdown-options">
+              <div class="option" onclick="selectOption('9:00 AM')">9:00 AM</div>
+              <div class="option" onclick="selectOption('10:00 AM')">10:00 AM</div>
+              <div class="option" onclick="selectOption('11:00 AM')">11:00 AM</div>
+            </div>
+          </div>          
+      <p class="location">at <span id="address">Harley Street, London W16 6BG</span></p>
+    </div>
+    <button class="book-now-btn" id="book-now-btn">Book Now</button>
+  </div>
+  
+  
+<div class="calendar">
+    <div class="calendar__month">
+      <div class="cal-month__previous"><</div>
+      <div class="cal-month__current"></div>
+      <div class="cal-month__next">></div>
+    </div>
+    <div class="calendar__head">
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+      <div class="cal-head__day"></div>
+    </div>
+    <div class="calendar__body">
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+      <div class="cal-body__week">
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+        <div class="cal-body__day"></div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+    <footer class="footer">
+        <div class="smaller-footer-print">
+            <h6 class="follow-text">FOLLOW #AMRANSMILES</h6>
+            <div class="horizontal-line"></div>
+            <div class="footer-info">
+                <h6>2023 Amran Smiles ltd. All rights reserved.</h6>
+                <h6>FAQ Privacy Terms & Conditions</h6>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="main.js"></script>
+    <script src="booking.js"></script>
+</body>
+
+</html>

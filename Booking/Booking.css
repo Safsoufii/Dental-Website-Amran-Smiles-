@@ -1,0 +1,776 @@
+@font-face {
+    font-family: 'Black-Mango';
+    src: url('fonts/BlackMango-Black.woff2') format('woff2'),
+        url('fonts/BlackMango-Black.woff') format('woff');
+        font-style: normal;
+        font-weight: normal;
+    
+}
+
+@font-face {
+    font-family: 'Black-Mango-thin';
+    src: url('fonts/BlackMango-Thin.woff2') format('woff2'),
+        url('fonts/BlackMango-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Barlow-thin';
+    src: url('fonts/Barlow-Thin.woff2') format('woff2'),
+        url('fonts/Barlow-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-SemiBold';
+    src: url('fonts/Barlow-SemiBold.woff2') format('woff2'),
+        url('fonts/Barlow-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-Regular';
+    src: url('fonts/Barlow-Regular.woff2') format('woff2'),
+        url('fonts/Barlow-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-MediumItalic';
+    src: url('fonts/Barlow-MediumItalic.woff2') format('woff2'),
+        url('fonts/Barlow-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-SemiBoldItalic';
+    src: url('fonts/Barlow-SemiBoldItalic.woff2') format('woff2'),
+        url('fonts/Barlow-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-Medium';
+    src: url('fonts/Barlow-Medium.woff2') format('woff2'),
+        url('fonts/Barlow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+
+:root {
+
+     /*Colours*/
+    --green-colour: #0d7e82;
+    --nude-colour: #a397a3;
+    --pink-colour: #d2afad;
+    --grey-colour: #9fa0a4;
+    --white-colour: #f5f6f8;
+    --black-colour: #000000;
+
+    /*Fonts*/
+    --barlow: Barlow;
+    --black-mango: Black-mango;
+
+    /*Font Sizes*/
+    --largest: 60px; 
+    --large: 30px;
+    --Medium: 24px;
+    --Small: 15px;
+    --Smallest: 13px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    background-color: var(--white-colour);
+    font-family: 'Barlow-Medium';
+}
+
+/*START OF PAGE-1 STYLING */
+/*START OF HEADER STYLING */
+
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  height: calc(50px + 50px); 
+  position: relative;
+  font-family: var(--barlow);
+  background-color: var(--white-colour);
+}
+
+
+
+.login {
+  position: absolute;
+  bottom: 90px;
+  right: 40px;
+  display: inline;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--Smallest);
+  text-decoration: none;
+  
+}
+
+.login a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
+}
+
+.login a:hover {
+  opacity: 1;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.052);
+}
+
+.top {
+  font-weight: 400;
+}
+
+.bottom {
+  font-weight: 200;
+  font-size: var(--Smallest);
+ padding-top: 15%;
+ color: var(--green-colour)!important;
+ z-index: 2;
+}
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+  width: 50px;
+  height: 6px;
+  background: var(--pink-colour);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: var(--green-colour);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-16px);
+}
+.menu-btn__burger::after {
+  transform: translateY(16px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px; /* Adjust the height to match the menu-btn height */
+  width: 80px; /* Adjust the width to match the menu-btn width */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  margin: 0px 0px 20px 90px;
+  padding-right: 10%;
+}
+
+.menu:focus {
+  opacity: 1;
+}
+
+.menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0;
+  opacity: 0;
+}
+
+.menu-label {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transform: rotate(-90deg);
+  padding-top: 10px;
+  padding-bottom: 35px;
+}
+
+.menu-text {
+  font-size: 20px !important;
+  opacity: 0.5;
+  color: black;
+
+}
+
+.menu-text:hover {
+  opacity: 1;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.052);
+}
+
+.menu-text:focus {
+  opacity: 1;
+}
+
+.fa-chevron-right {
+  transition: all 0.3s;
+  padding-bottom: 95%;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.7;
+  margin-top: -35px;
+}
+
+.menu-item:hover {
+  opacity: 1;
+  text-shadow: 2px 2px 5px rgba(68, 50, 63, 0.229);
+}
+
+menu-item:focus {
+  opacity: 1;
+}
+
+.menu-item a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+i {
+ 
+align-self: center;
+margin: 50px 10px 10px 10px;
+}
+
+.vertical-line {
+  width: 5%;          /* Set the width of the line */
+  height: 1px;       /* Set the height of the line */
+  background-color:  #9fa0a448; /* Set the color of the line */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  transform: rotate(90deg);
+  margin: 65px 0px 20px 0px;
+  
+}
+
+/* Dropdown menu */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  background-color: var(--white-colour);
+  box-shadow: 0px 20px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px 16px;
+  z-index: 1;
+  width: 165px;
+  line-height: 40px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  font-family: var(--Barlow-thin);
+  font-weight: 200;
+  transform: translateX(-50px);
+  margin-top: 160px;
+}
+
+.dropdown-menu a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dropdown-menu a:hover {
+  color: #000000;
+  font-family: var(--Barlow);
+  font-weight: 800;
+}
+
+.dropdown-container:hover .dropdown-menu,
+.dropdown-hover-zone:hover + .dropdown-menu {
+  display: block;
+}
+
+.dropdown-container:hover ~ .Container-1,
+.dropdown-hover-zone:hover ~ .Container-1 {
+  filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.265);
+}
+
+.blur {
+  filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.265);
+}
+
+/* Add this for the hover zone */
+.dropdown-hover-zone {
+  position: absolute;
+  width: 100px;
+  height: 900px; /* Adjust this value to cover the gap */
+  background-color: transparent;
+  z-index: 0;
+  top: 0;
+}
+
+
+/* Add this for the arrow icon */
+.bottom::after {
+  content: '\25B6';
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.bottom:hover::after {
+  transform: rotate(90deg);
+}
+
+/* Add this for the horizontal lines */
+.dropdown-menu a:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+/*END OF HEADER STYLING */
+
+/*BODY*/
+
+/*START OF CALENDER STYLING */
+
+.calendar {
+  width: 350px;
+  margin: -520px 0px 0px 150px;
+  transform: scale(1.5);
+
+}
+
+.calendar__month {
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+}
+
+.cal-month__previous,
+.cal-month__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.cal-month__previous:hover,
+.cal-month__next:hover {
+  background-color: #42A5F5;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  font-weight: 800;
+  color: #000000;
+}
+
+.cal-month__next {
+  right: 0;
+}
+
+.cal-month__current {
+  text-align: center;
+  color: #d2afad68;
+}
+
+.cal-head__day,
+.cal-body__day {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.cal-body__week,
+.calendar__head {
+  display: block;
+  height: 50px;
+  width: 350px;
+}
+
+.calendar__head {
+  line-height: 50px;
+  position: relative;
+}
+
+.calendar__head::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #d2afad65;
+}
+
+.cal-body__day {
+  color: #d2afad70;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cal-day__month--current {
+  color: #000000;
+}
+
+.cal-day__day--today {
+  color: var(--green-colour);
+}
+
+.cal-day__day--selected {
+  background-color: var(--pink-colour);
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  color: #111;
+}
+
+/*END OF CALENDER STYLING */
+
+/*START OF INFORMATION BOARD */
+
+.info-board {
+  width: 50%;
+  float: right;
+  font-family: 'Josefin Sans';
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--green-colour);
+  height: 600px;
+  width: 50%;
+  margin-top: 50px;
+}
+
+/*ADDITIONAL INFORMATION */
+.additional-info {
+  background-color: transparent;
+}
+.location {
+  font-family: 'Barlow-thin';
+  font-size: var(--Medium);
+  color: var(--white-colour);
+  background-color: transparent;
+  margin: 30px 910px 0px 2300px;
+  width: 500px;
+  z-index: 1;
+}
+#address {
+  font-family: 'Barlow-Medium';
+  font-size: var(--Medium);
+  background-color: transparent;
+}
+
+.who {
+  font-size: 45px;
+  font-family: 'Barlow-thin';
+  color: var(--white-colour);
+  background-color: transparent;
+  margin: 0px -180px 0px 760px;
+  padding: 50px;
+  width: 900px;
+}
+#doctor {
+  color: black;
+  background-color: transparent;
+  
+}
+
+.selected-date {
+  background-color: transparent;
+}
+.selected-date-wrapper {
+  display: flex;
+  align-items: baseline;
+  /* Adjust the margin to position the date to the left of the dropdown */
+  margin-right: 15px;
+  background-color: transparent;
+  margin: -50px 400px 0px 0px;
+}
+
+.day-number {
+  font-size: 250px;
+  font-family: 'Barlow-SemiBold';
+  background-color: transparent;
+  color: var(--white-colour);
+}
+
+.suffix {
+  font-size: 50px;
+  font-family: 'Barlow-thin';
+  color: var(--white-colour);
+  background-color: transparent;
+  margin-left: 2px;
+}
+
+/*DROPDOWN MENUS */
+/*TIME DROPDOWN*/
+
+select option {
+  font-family: 'Barlow-Medium';
+  font-size: var(--medium);
+
+}
+
+.time-dropdown {
+  width: 85px;
+  transform: scale(1.5);
+  margin: 320px -1000px 0px 0px;
+}
+
+label {
+  background-color: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  font-family: 'Barlow-thin';
+  background-color: rgba(255, 255, 255, 0.763);
+}
+
+.dropdown-selected {
+  display: flex;        /* Added */
+  align-items: center;  /* Added */
+  border: 1px solid #ccc;
+  padding: 8px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.arrow {
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+  margin-top: 1px;
+  transform: translateY(60%) translateX(70%) rotate(45deg);
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  width: 137px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #ddd;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  padding: 50px;
+}
+
+.time-dropdown {
+  width: 85px;
+  transform: scale(1.5);
+}
+/*TIME DROPDOWN*/
+/* Treatment dropdown styles */
+
+.treatment-dropdown {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  font-family: 'Barlow-thin';
+  width: 175px;
+  transform: scale(1.7);
+  margin: -470px 0px 0px 350px;
+}
+
+.treatment-dropdown-selected {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.treatment-arrow {
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+  margin-top: 1px;
+  transform: translateY(60%) translateX(60%) rotate(45deg);
+}
+.show {
+  display: block;
+  width: 175px;
+}
+
+
+
+/* INFO-BOARD */
+
+.info-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 600px;
+}
+
+.treatment-container,
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  padding: 50px;
+}
+
+/*BOOK NOW BUTTON */
+.booking-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.book-now-btn {
+  width: 190px;
+  background-color: #ffffffb1;
+  color: var(--green-colour);
+  font-family: 'Barlow-Medium';
+  font-size: var(--large);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: -900px 0px -600px 1100px;
+  transform: translateY(-100px);
+}
+
+.book-now-btn:hover {
+  background-color: rgba(255, 255, 255, 0.557);
+  color: rgba(255, 255, 255, 0.838);
+}
+
+
+
+/*START OF FOOTER STYLING */
+
+
+.footer {
+    width: 100%; /* Add this line */
+    margin-top: 400px; /* Add this line */
+}
+
+
+.horizontal-line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 0px; /* Add this line */
+}
+
+.smaller-footer-print {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.follow-text {
+    align-self: flex-end; /* Add this line */
+    margin-bottom: 15px; /* Add this line */
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer-info h6 {
+    margin: 0;
+}
+

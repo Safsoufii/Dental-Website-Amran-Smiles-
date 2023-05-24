@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Sign-up.css">
+    <script src="https://kit.fontawesome.com/3720a64a77.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Page 1-->
+
+    <!--Start Of Menu-->
+    <header>
+        <div class="login">
+            <i class="fa-regular fa-user" style="color: black" ></i>
+            <a href="../Sign up/Sign-up.html">LOG IN</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">
+            <div class="menu-btn">
+              <div class="menu-btn__burger"></div>
+            </div>
+          </div>
+          <nav class="menu" id="menu" tabindex="0">
+            <div class="menu-item dropdown-container">
+                <i class="fa-solid fa-tooth fa-2x" style="color: black"></i>
+                <a class="top" href="#">Treatment</a>
+                <a class="bottom" href="#">See More</a>
+                <div class="dropdown-hover-zone"></div>
+                <div class="dropdown-menu">
+                  <a href="#">Bridges</a>
+                  <a href="#">Crowns</a>
+                  <a href="#">Fillings</a>
+                  <a href="#">Root canal treatment</a>
+                  <a href="#">Scale and polish</a>
+                  <a href="#">Braces</a>
+                  <a href="#">Invisalign</a>
+                  <a href="#">Wisdom tooth removal</a>
+                  <a href="#">Dental implants</a>
+                </div>
+              </div>
+              
+              
+            
+            <span class="vertical-line"></span>
+            <div class="menu-item">
+                <i class="fa-regular fa-images fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+                <a class="top" href="#" onclick="toggleActive(event)">Gallery</a>
+                <a class="bottom" href="#" onclick="toggleActive(event)">See More</a>
+            </div>
+            <span class="vertical-line"></span>
+            <div class="menu-item">
+                <i class="fa-solid fa-phone fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+                <a class="top" href="#" onclick="toggleActive(event)">Contact</a>
+                <a class="bottom" href="#" onclick="toggleActive(event)">See More</a>
+            </div>
+            <span class="vertical-line"></span>
+            <div class="menu-item">
+                <i class="fa-solid fa-people-group fa-2x" style="color: black" onclick="toggleActive(event)"></i>
+                <a class="top" href="#" onclick="toggleActive(event)">Who We Are</a>
+                <a class="bottom" href="#" onclick="toggleActive(event)">See More ></a>
+            </div>
+            <span class="vertical-line"></span>
+        </nav>
+
+    </header>
+
+    <!--End Of Menu-->
+
+    <section class="body">
+        <div class="container">
+            <div class="log-sign-button">
+                <button class="log-in" id="login-btn">LOG IN</button>
+                <button class="Sign-up" id="signup-btn">SIGN UP</button>
+            </div>            
+        </div>
+
+        <div id="booking-details"></div>
+        
+
+        <!--Start of sign up form-->
+        <div id="signup-form" style="display: none;">
+        <div class="Account-info-container">
+            <h1 class="title signup">Signup</h1>
+            <img class="cinematic-image" src="../Images/Sign up/photo.png" alt=teeth-in-tub>
+            <div class="body-text">
+                <h1 class="question">Why create an account?</h1>
+                <li>
+                    <ul><span class="tick-box-icon"><i class="fa-regular fa-square-check"
+                                style="color: #ffffff;"></i></span>Faster checkout</ul>
+                    <ul><span class="tick-box-icon"><i class="fa-regular fa-square-check"
+                                style="color: #ffffff;"></i></span>Easy access to manage your purchased treatments</ul>
+                    <ul><span class="tick-box-icon"><i class="fa-regular fa-square-check"
+                                style="color: #ffffff;"></i></span>Special promotions</ul>
+                    <ul><span class="tick-box-icon"><i class="fa-regular fa-square-check"
+                                style="color: #ffffff;"></i></span>Online booking</ul>
+                    <ul><span class="tick-box-icon"><i class="fa-regular fa-square-check"
+                                style="color: #ffffff;"></i></span>Manage your bookings</ul>
+                </li>
+            </div>
+        </div>
+
+       
+
+        <form class="sign-up-form-container">
+            <div class="form-column">
+                <label for="First Name"></label>
+                <input type="text" id="first-name" name="first-name" required placeholder="First Name*">
+
+                <label for="Email"></label>
+                <input type="text" id="email" name="email" required placeholder="Email*">
+
+                <label for="Password"></label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required placeholder="Password*">
+                    <i class="fa-regular fa-eye-slash" id="eye-slash-icon-signup" onclick="togglePassword('password', 'eye-slash-icon-signup', 'eye-icon-signup')"></i>
+<i class="fa-regular fa-eye" id="eye-icon-signup" style="display: none;" onclick="togglePassword('password', 'eye-slash-icon-signup', 'eye-icon-signup')"></i>
+
+                </div>
+
+                <label for="Address Line 1"></label>
+                <input type="text" id="address-line-1" name="address-line-1" required placeholder="Address Line 1*">
+
+                <label for="City"></label>
+                <input type="text" id="city" name="city" required placeholder="City*">
+            </div>
+            <div class="form-column">
+                <label for="Last Name"></label>
+                <input type="text" id="last-name" name="last-name" required placeholder="Last name*">
+
+                <label for="Phone Number"></label>
+                <input type="text" id="phone-number" name="phone-number" required placeholder="Phone Number*">
+
+                <label for="Password"></label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required placeholder="Confirm Password*">
+                    <i class="fa-regular fa-eye-slash" id="eye-slash-icon-signup" onclick="togglePassword('password', 'eye-slash-icon-signup', 'eye-icon-signup')"></i>
+                    <i class="fa-regular fa-eye" id="eye-icon-signup" style="display: none;" onclick="togglePassword('password', 'eye-slash-icon-signup', 'eye-icon-signup')"></i>
+                </div>
+
+                <label for="Country"></label>
+                <input type="text" id="country" name="country" required placeholder="Country*">
+
+                <label for="Post Code"></label>
+                <input type="text" id="post-code" name="post-code" required placeholder="Post Code*">
+            </div>
+        </form>
+            <button class="Sign-up-button">SIGN UP</button>
+            </div>
+
+            <!--End of sign up form-->
+
+            <!--Start of log in form-->
+            <!--Start of log in form-->
+            <div class="log-in-container" id="login-form" style="display: none;">
+                <div class="sign-in-container">
+                    <h1 class="title sign-in">Customer Sign In</h1>
+                    <form>
+                        <div class="login-form">
+                            <h3 class="log-in-subheading">Log in with your email</h3>
+                            <label for="Email"></label>
+                            <input type="text" id="email" name="email" required placeholder="Email*">
+                            <label for="Password"></label>
+                            <div class="password-container">
+                                <input type="password" id="login-password" name="password" required placeholder="Password*">
+                                <i class="fa-regular fa-eye-slash" id="eye-slash-icon-login" onclick="togglePassword('login-password', 'eye-slash-icon-login', 'eye-icon-login')"></i>
+                                <i class="fa-regular fa-eye" id="eye-icon-login" style="display: none;" onclick="togglePassword('login-password', 'eye-slash-icon-login', 'eye-icon-login')"></i>
+                            </div>
+                            <a href="#">Forgot your password?<br></a>
+                            <label>
+                                <input type="checkbox" name="newsletter" value="1">
+                                Keep me logged in<br>
+                            </label>
+                            <button class="Log-in-button">LOG IN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <footer>
+        <div class="smaller-footer-print">
+            <h6 class="follow-text">FOLLOW #AMRANSMILES</h6>
+            <div class="horizontal-line"></div>
+            <div class="footer-info">
+                <h6>2023 Amran Smiles ltd. All rights reserved.</h6>
+                <h6>FAQ Privacy Terms & Conditions</h6>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="signUp.js"></script>
+    </body>
+    </html>
